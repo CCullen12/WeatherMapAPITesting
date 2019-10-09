@@ -14,7 +14,6 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services
         public WeatherLatestDTO weatherLatestDTO = new WeatherLatestDTO();
         //WE NEED CALL MANAGER
         public WeatherLatestCallManager weatherLatestCallManager = new WeatherLatestCallManager();
-
         //Need JS obj.
         public JObject LatestWeatherJson;
         public WeatherLatestsService()
@@ -24,5 +23,4 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services
         }
         internal WeatherLatestCallManager WeatherLatestCallManager { get => weatherLatestCallManager; set => weatherLatestCallManager = value; }
     }
-
 }

@@ -15,9 +15,9 @@ namespace OpenWeatherMapAPITesting.Tests
         private WeatherLatestsService weatherLatestService = new WeatherLatestsService();
         //this is just to start up a frame work.
         [Test]
-        public void DummyTest()
+        public void ConnectionTest()
         {
-
+            Assert.AreEqual("200", weatherLatestService.weatherLatestDTO.latestWeatherRoot.cod.ToString());
         }
 
     }
