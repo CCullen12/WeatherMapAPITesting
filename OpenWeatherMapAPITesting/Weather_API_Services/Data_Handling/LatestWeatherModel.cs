@@ -17,6 +17,7 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
         public IList<WeatherWithin> weather { get; set; }
         public Clouds clouds { get; set; }
         public Wind wind { get; set; }
+        public Sys sys { get; set; }
     }
     public class WeatherMain{
         public float temp { get; set; }
@@ -67,5 +68,9 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
     {
         public float speed { get; set; }
         public double deg { get; set; }
+    }
+    public class Sys
+    {
+        public string pod { get; set; }
     }
 }

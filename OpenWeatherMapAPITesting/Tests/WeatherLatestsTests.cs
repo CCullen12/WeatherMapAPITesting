@@ -136,18 +136,6 @@ namespace OpenWeatherMapAPITesting.Tests
         {
             Assert.AreEqual("10d", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].icon);
         }
-//      [Test]
-//      public void ListTypeTest()
-//      {
-//          Assert.AreEqual("", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list.GetType().ToString());
-//      }
-//      this test returns <OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling.Clouds>
-//      so im skipping this test as a failure.
-//      [Test]
-//      public void ListCloudsAllTest()
-//      {
-//          Assert.AreEqual(100, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].clouds);
-//      }
         [Test]
         public void ListWindSpeedTest()
         {
@@ -157,6 +145,36 @@ namespace OpenWeatherMapAPITesting.Tests
         public void ListWindDegTest()
         {
             Assert.AreEqual(254.844, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].wind.deg);
+        }
+        [Test]
+        public void ListSysPodTest()
+        {
+            Assert.AreEqual("d", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].sys.pod);
+        }
+        [Test]
+        public void ListDtPtTwoTest()
+        {
+            Assert.AreEqual(1570644000, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[1].dt);
+        }
+        [Test]
+        public void ListDtPtThreeTest()
+        {
+            Assert.AreEqual(1570654800, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[2].dt);
+        }
+        [Test]
+        public void ListDtPtFourTest()
+        {
+            Assert.AreEqual(1570665600, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[3].dt);
+        }
+        [Test]
+        public void ListDtLengthTest()
+        {
+            Assert.AreEqual(10, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].dt.ToString().Length);
+        }
+        [Test]
+        public void ListDtPtTwoLengthTest()
+        {
+            Assert.AreEqual(10, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[1].dt.ToString().Length);
         }
     }
 }
