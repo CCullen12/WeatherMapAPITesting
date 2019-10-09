@@ -58,17 +58,20 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\WeatherLatestsTests.cs" />
     <Compile Include="WeatherConfig.cs" />
+    <Compile Include="Weather_API_Services\Data_Handling\LatestWeatherModel.cs" />
+    <Compile Include="Weather_API_Services\Data_Handling\WeatherLatestDTO.cs" />
+    <Compile Include="Weather_API_Services\HTTP_Manager\WeatherLatestCallManager.cs" />
+    <Compile Include="Weather_API_Services\WeatherLatestsService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\" />
-    <Folder Include="Weather_API_Services\Data_Handling\" />
-    <Folder Include="Weather_API_Services\HTTP_Manager\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
