@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
 {
     //here we gather the data that we get from the api.
-    public class Lists
+    //lists commented out for testing reasons.
+    public class List
     {
-        public int dt { get; set; }
-        public string dt_text { get; set; }
-        public WeatherMain Wmain { get; set; }
+        public double dt { get; set; }
+        public string dt_txt { get; set; }
+        public WeatherMain main { get; set; }
     }
+//    public class Lists
+//    {
+//        [JsonProperty("dt")]
+//        public int dt { get; set; }
+//    }
 
+    
     public class WeatherMain{
         public float temp { get; set; }
         public float temp_min { get; set; }
@@ -33,5 +41,9 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
         public int cod { get; set; }
         public double message { get; set; }
         public int cnt { get; set; }
+        public City city { get; set; }
+        //could make a list with the vables crated in it.
+        //public List<Lists> lists { get; set; }
+        public IList<List> list { get; set; }
     }
 }
