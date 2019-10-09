@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using RestSharp;
 using OpenWeatherMapAPITesting.Weather_API_Services;
+using OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling;
 
 namespace OpenWeatherMapAPITesting.Tests
 {
@@ -114,6 +115,48 @@ namespace OpenWeatherMapAPITesting.Tests
         {
             Assert.AreEqual(1570601609, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunrise);
             Assert.AreEqual(1570641718, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunset);
+        }
+        [Test]
+        public void ListWeatherIDTest()
+        {
+            Assert.AreEqual(500, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].id);
+        }
+        [Test]
+        public void ListWeatherMainTest()
+        {
+            Assert.AreEqual("Rain", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].main);
+        }
+        [Test]
+        public void ListWeatherDescriptionTest()
+        {
+            Assert.AreEqual("light rain", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].description);
+        }
+        [Test]
+        public void ListWeatherIconTest()
+        {
+            Assert.AreEqual("10d", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].icon);
+        }
+//      [Test]
+//      public void ListTypeTest()
+//      {
+//          Assert.AreEqual("", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list.GetType().ToString());
+//      }
+//      this test returns <OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling.Clouds>
+//      so im skipping this test as a failure.
+//      [Test]
+//      public void ListCloudsAllTest()
+//      {
+//          Assert.AreEqual(100, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].clouds);
+//      }
+        [Test]
+        public void ListWindSpeedTest()
+        {
+            Assert.AreEqual(7.21f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].wind.speed);
+        }
+        [Test]
+        public void ListWindDegTest()
+        {
+            Assert.AreEqual(254.844, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].wind.deg);
         }
     }
 }

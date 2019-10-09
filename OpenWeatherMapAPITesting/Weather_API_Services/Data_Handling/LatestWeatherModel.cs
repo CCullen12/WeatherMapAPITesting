@@ -14,6 +14,9 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
         public double dt { get; set; }
         public string dt_txt { get; set; }
         public WeatherMain main { get; set; }
+        public IList<WeatherWithin> weather { get; set; }
+        public Clouds clouds { get; set; }
+        public Wind wind { get; set; }
     }
     public class WeatherMain{
         public float temp { get; set; }
@@ -47,8 +50,22 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
         public double message { get; set; }
         public int cnt { get; set; }
         public City city { get; set; }
-        //could make a list with the vables crated in it.
-        //public List<Lists> lists { get; set; }
         public IList<List> list { get; set; }
+    }
+    public class WeatherWithin
+    {
+        public double  id { get; set; }
+        public string main { get; set; }
+        public string description { get; set; }
+        public string icon { get; set; }
+    }
+    public class Clouds
+    {
+        public int all { get; set; }
+    }
+    public class Wind
+    {
+        public float speed { get; set; }
+        public double deg { get; set; }
     }
 }
