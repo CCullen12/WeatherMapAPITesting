@@ -4,9 +4,9 @@ In this project we are tasked to create tests for the  open API openweathermap.o
 # Reading an API
 To read information from an API online and test it we need some classes and methods in place.
 
-# # Classes
+# Classes
 
-# # Weather API Services
+# Weather API Services
 # WeatherLatestsService
 Here is where we call the API and store it into the Data model transfer class (DTO).
 
@@ -17,11 +17,11 @@ Here we recreate the structure from the json file that we get from the API into 
 # WeatherLatestDTO
 Here we grab the json file from the the API we connected to and Deserialized it into the root class of the model file.
 
-# # HTTP Manager
+# HTTP Manager
 # WeatherLatestCallManager
 Here we connect to the client using our configurations with the connection strings that we need and return the responce for the datamodel to be able to use.
 
-# # Tests
+# Tests
 # WeatherLatestsTests
 Here is where we do all the testing of the weather API.
 
