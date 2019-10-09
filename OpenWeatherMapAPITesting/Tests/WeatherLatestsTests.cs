@@ -56,7 +56,32 @@ namespace OpenWeatherMapAPITesting.Tests
         [Test]
         public void MaxTempTest()
         {
-            Assert.Less(373.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.temp_min);
+            Assert.Greater(373.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.temp_max);
+        }
+        [Test]
+        public void PressureTest()
+        {
+            Assert.Less(800.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.pressure);
+        }
+        [Test]
+        public void SeaLevelLevelTest()
+        {
+            Assert.Less(800.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.sea_level);
+        }
+        [Test]
+        public void GrndLevelTest()
+        {
+            Assert.Less(800.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.grnd_level);
+        }
+        [Test]
+        public void HumidityTest()
+        {
+            Assert.Less(50.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.humidity);
+        }
+        [Test]
+        public void TempKFTest()
+        {
+            Assert.Less(0.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.temp_kf);
         }
     }
 }
