@@ -14,7 +14,7 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.HTTP_Manager
         {
             client = new RestClient(WeatherConfig.baseUrl);
         }
-        public string getLatestRates()
+        public string getLatestWeather()
         {
             //reason we have the "&" seperate from the weatherconfig is that xml thinks that the &API is a class and doesnt 
             //reconise that its within a string.

@@ -18,8 +18,8 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services
         public JObject LatestWeatherJson;
         public WeatherLatestsService()
         {
-            weatherLatestDTO.DeserializeLatestWeather(weatherLatestCallManager.getLatestRates());
-            LatestWeatherJson = JObject.Parse(weatherLatestCallManager.getLatestRates());
+            weatherLatestDTO.DeserializeLatestWeather(weatherLatestCallManager.getLatestWeather());
+            LatestWeatherJson = JObject.Parse(weatherLatestCallManager.getLatestWeather());
         }
         internal WeatherLatestCallManager WeatherLatestCallManager { get => weatherLatestCallManager; set => weatherLatestCallManager = value; }
     }

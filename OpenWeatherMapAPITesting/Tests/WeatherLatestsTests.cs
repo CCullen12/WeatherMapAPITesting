@@ -17,8 +17,18 @@ namespace OpenWeatherMapAPITesting.Tests
         [Test]
         public void ConnectionTest()
         {
-            Assert.AreEqual("200", weatherLatestService.weatherLatestDTO.latestWeatherRoot.cod.ToString());
+            Assert.AreEqual(200, weatherLatestService.weatherLatestDTO.latestWeatherRoot.cod);
         }
-
+        //this is a temp test for message as message can always change.
+        [Test]
+        public void MessageTest()
+        {
+            Assert.AreEqual("0.0111", weatherLatestService.weatherLatestDTO.latestWeatherRoot.message.ToString());
+        }
+        [Test]
+        public void CntTest()
+        {
+            Assert.AreEqual(40, weatherLatestService.weatherLatestDTO.latestWeatherRoot.cnt);
+        }
     }
 }
