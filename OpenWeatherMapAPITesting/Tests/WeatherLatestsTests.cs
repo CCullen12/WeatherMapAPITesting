@@ -23,7 +23,7 @@ namespace OpenWeatherMapAPITesting.Tests
         [Test]
         public void MessageTest()
         {
-            Assert.AreEqual("0.0111", weatherLatestService.weatherLatestDTO.latestWeatherRoot.message.ToString());
+            Assert.AreNotEqual("0.0111", weatherLatestService.weatherLatestDTO.latestWeatherRoot.message.ToString());
         }
         [Test]
         public void CntTest()
@@ -82,6 +82,38 @@ namespace OpenWeatherMapAPITesting.Tests
         public void TempKFTest()
         {
             Assert.Less(0.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.temp_kf);
+        }
+        [Test]
+        public void CityIDTest()
+        {
+           Assert.AreEqual(2643743, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.id);
+        }
+        [Test]
+        public void CityNameTest()
+        {
+            Assert.AreEqual("London", weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.name);
+        }
+        [Test]
+        public void CityCoordLatAndLonTest()
+        {
+            Assert.AreEqual(51.5085, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.coord.lat);
+            Assert.AreEqual(-0.1258, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.coord.lon);
+        }
+        [Test]
+        public void CityCountryTest()
+        {
+            Assert.AreEqual("GB", weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.country);
+        }
+        [Test]
+        public void CityTimezoneTest()
+        {
+            Assert.AreEqual(3600, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.timezone);
+        }
+        [Test]
+        public void CitySunriseAndSunsetTest()
+        {
+            Assert.AreEqual(1570601609, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunrise);
+            Assert.AreEqual(1570641718, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunset);
         }
     }
 }

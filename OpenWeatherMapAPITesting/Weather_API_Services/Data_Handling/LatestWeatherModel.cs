@@ -15,13 +15,6 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
         public string dt_txt { get; set; }
         public WeatherMain main { get; set; }
     }
-//    public class Lists
-//    {
-//        [JsonProperty("dt")]
-//        public int dt { get; set; }
-//    }
-
-    
     public class WeatherMain{
         public float temp { get; set; }
         public float temp_min { get; set; }
@@ -35,6 +28,18 @@ namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
     public class City
     {
         public int id { get; set; }
+        public string name { get; set; }
+        //if added this it breaks everything.
+        public Coord coord { get; set; }
+        public string country { get; set; }
+        public int timezone { get; set; }
+        public int sunrise { get; set; }
+        public int sunset { get; set; }
+    }
+    public class Coord
+    {
+        public double lat { get; set; }
+        public double lon { get; set; }
     }
     public class LatestWeatherRoot
     {
