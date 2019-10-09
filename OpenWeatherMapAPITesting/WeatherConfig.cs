@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
+//here we get the connection string from config and make it static so it cant be changed.
 namespace OpenWeatherMapAPITesting
 {
     class WeatherConfig

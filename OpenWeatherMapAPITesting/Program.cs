@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //this is a console application just in case i need to print out
-//many variables.
+//many variables if need be.
 namespace OpenWeatherMapAPITesting
 {
     class Program

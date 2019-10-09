@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using RestSharp;
+﻿using NUnit.Framework;
 using OpenWeatherMapAPITesting.Weather_API_Services;
-using OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling;
 
+//this file is for all the testing. we have it all in one place so that
+//it is much easier to read.
 namespace OpenWeatherMapAPITesting.Tests
 {
     [TestFixture]

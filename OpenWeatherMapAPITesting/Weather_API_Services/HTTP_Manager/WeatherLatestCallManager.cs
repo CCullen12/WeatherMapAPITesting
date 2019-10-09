@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 
+//here we connect to the api online using the connection from the config
+//and restsharp
 namespace OpenWeatherMapAPITesting.Weather_API_Services.HTTP_Manager
 {
     class WeatherLatestCallManager

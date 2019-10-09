@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using OpenWeatherMapAPITesting.Weather_API_Services.HTTP_Manager;
 using OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling;
 
+//we put all the calling and storing is done here.
 namespace OpenWeatherMapAPITesting.Weather_API_Services
 {
     class WeatherLatestsService

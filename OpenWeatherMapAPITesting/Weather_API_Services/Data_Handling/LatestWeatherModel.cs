@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
+//here we do the structer of the json file we get from the api into
+//c# terms. it makes it cleaner and easier to read/test.
 namespace OpenWeatherMapAPITesting.Weather_API_Services.Data_Handling
 {
     //here we gather the data that we get from the api.
-    //lists commented out for testing reasons.
     public class List
     {
         public double dt { get; set; }
