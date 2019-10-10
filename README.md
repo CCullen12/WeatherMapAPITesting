@@ -35,7 +35,10 @@ I created this application as a console app thinking that i would need to output
 This gets the infomation from App.config and puts it into c# friendly terms for later use. we also make all varables into static so that it wont be able to be changed later on as its public.
 
 # NuGet Packages
-Newtonsoft - To enable us to use get the JSON framework in .net
+Newtonsoft.json - To enable us to use get the JSON framework in .net.
+
 NUnit - This is a unit-testing framework.
+
 NUnitTestAdapter -  This is an adapter to run tests in visual studio.
+
 RestSharp - This helps us connect / make calls to an API.
