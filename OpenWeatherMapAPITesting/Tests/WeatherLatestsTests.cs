@@ -26,15 +26,17 @@ namespace OpenWeatherMapAPITesting.Tests
         {
             Assert.AreEqual(40, weatherLatestService.weatherLatestDTO.latestWeatherRoot.cnt);
         }
+        //this will always change so we are just checking if the string has the correct lenght.
         [Test]
         public void ListDTTest()
         {
-            Assert.AreEqual("1570633200", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].dt.ToString());
+            Assert.AreEqual(10, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].dt.ToString().Length);
         }
+        //this will always change so we are just checking if the string has the correct lenght.
         [Test]
         public void ListDT_txtTest()
         {
-            Assert.AreEqual("2019-10-09 15:00:00", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].dt_txt.ToString());
+            Assert.AreEqual(19, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].dt_txt.ToString().Length);
         }
         //we test if its greater than 273 kelvin as that is the freezing point.
         [Test]
@@ -77,7 +79,7 @@ namespace OpenWeatherMapAPITesting.Tests
         [Test]
         public void TempKFTest()
         {
-            Assert.Less(0.00f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.temp_kf);
+            Assert.IsInstanceOf(typeof(float), weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].main.temp_kf);
         }
         [Test]
         public void CityIDTest()
@@ -90,9 +92,13 @@ namespace OpenWeatherMapAPITesting.Tests
             Assert.AreEqual("London", weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.name);
         }
         [Test]
-        public void CityCoordLatAndLonTest()
+        public void CityCoordLatTest()
         {
             Assert.AreEqual(51.5085, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.coord.lat);
+        }
+        [Test]
+        public void CityCoordLonTest()
+        {
             Assert.AreEqual(-0.1258, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.coord.lon);
         }
         [Test]
@@ -105,71 +111,79 @@ namespace OpenWeatherMapAPITesting.Tests
         {
             Assert.AreEqual(3600, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.timezone);
         }
+        //Sunrise and sunset tests will be chaning daily so we cant really get a good test that will always pass on them.
         [Test]
-        public void CitySunriseAndSunsetTest()
+        public void CitySunriseTest()
         {
-            Assert.AreEqual(1570601609, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunrise);
-            Assert.AreEqual(1570641718, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunset);
+            Assert.Greater(1570961110, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunrise);
         }
+        [Test]
+        public void CitySunsetTest()
+        {
+            Assert.Less(1570641718, weatherLatestService.weatherLatestDTO.latestWeatherRoot.city.sunset);
+        }
+        //as the id can change we check if what is returned is a double.
         [Test]
         public void ListWeatherIDTest()
         {
-            Assert.AreEqual(500, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].id);
+            Assert.IsInstanceOf(typeof(double), weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].id);
         }
+        //as the weater constantly changes we check if what is returned is a string.
         [Test]
         public void ListWeatherMainTest()
         {
-            Assert.AreEqual("Rain", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].main);
+            Assert.IsInstanceOf(typeof(string), weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].main);
         }
+        //as the description changes based on weather we test if it returns a string.
         [Test]
         public void ListWeatherDescriptionTest()
         {
-            Assert.AreEqual("light rain", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].description);
+            Assert.IsInstanceOf(typeof(string), weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].description);
         }
         [Test]
         public void ListWeatherIconTest()
         {
-            Assert.AreEqual("10d", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].icon);
+            Assert.IsInstanceOf(typeof(string), weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].weather[0].icon);
         }
         [Test]
         public void ListWindSpeedTest()
         {
-            Assert.AreEqual(7.21f, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].wind.speed);
+            Assert.IsInstanceOf(typeof(float), weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].wind.speed);
         }
         [Test]
         public void ListWindDegTest()
         {
-            Assert.AreEqual(254.844, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].wind.deg);
+            Assert.IsInstanceOf(typeof(double), weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].wind.deg);
         }
+        //im not too sure on what pod is.
         [Test]
         public void ListSysPodTest()
         {
-            Assert.AreEqual("d", weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].sys.pod);
+            Assert.AreEqual(1, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].sys.pod.Length);
         }
-        [Test]
-        public void ListDtPtTwoTest()
-        {
-            Assert.AreEqual(1570644000, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[1].dt);
-        }
-        [Test]
-        public void ListDtPtThreeTest()
-        {
-            Assert.AreEqual(1570654800, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[2].dt);
-        }
-        [Test]
-        public void ListDtPtFourTest()
-        {
-            Assert.AreEqual(1570665600, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[3].dt);
-        }
+        //this will always change so we are just checking if the string has the correct lenght.
         [Test]
         public void ListDtLengthTest()
         {
             Assert.AreEqual(10, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[0].dt.ToString().Length);
         }
+        //this will always change so we are just checking if the string has the correct lenght.
         [Test]
         public void ListDtPtTwoLengthTest()
         {
             Assert.AreEqual(10, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[1].dt.ToString().Length);
+        }
+        //this will always change so we are just checking if the string has the correct lenght.
+        [Test]
+        public void ListDtPtThreeTest()
+        {
+            Assert.AreEqual(10, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[2].dt.ToString().Length);
+        }
+        //this will always change so we are just checking if the string has the correct lenght.
+        [Test]
+        public void ListDtPtFourTest()
+        {
+            Assert.AreEqual(10, weatherLatestService.weatherLatestDTO.latestWeatherRoot.list[3].dt.ToString().Length);
         }
     }
 }
